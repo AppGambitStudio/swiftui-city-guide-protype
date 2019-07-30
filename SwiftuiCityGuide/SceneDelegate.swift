@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  SwiftuiCityGuide
+//  GridDemoSwiftUI
 //
-//  Created by dev on 30/07/19.
+//  Created by dev on 22/07/19.
 //  Copyright © 2019 appgambit. All rights reserved.
 //
 
@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: ContentView(searchText: ""))
+            window.rootViewController = UIHostingController(rootView: /*DetailGridView())*/ContentView(searchText: "").environmentObject(UserData()))
             self.window = window
             window.makeKeyAndVisible()
         }

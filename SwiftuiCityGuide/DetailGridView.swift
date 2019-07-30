@@ -12,12 +12,12 @@ import Combine
 struct DetailGridView : View {
 //    @Binding var isOpen: Bool?
     var onDismiss: () -> Void
-
+    @EnvironmentObject var userData: UserData
     var body: some View {
 //        NavigationView {
         GeometryReader { geometry in
             ZStack {
-                Image("stmarylake")
+                Image(self.userData.selectedCity.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(minWidth: 0, maxWidth: geometry.size.width, minHeight: 0, maxHeight: geometry.size.height)
@@ -27,7 +27,7 @@ struct DetailGridView : View {
                         print(geometry.size, (600 * geometry.size.height) / 896)
                 }
                 VStack() {
-                    DetailHeader()
+                    DetailHeader(userData: self.userData)
                     //Spacer()
                     DetailSlider(size: geometry.size)
                 }.padding(.top, 100)
@@ -44,10 +44,11 @@ struct DetailGridView : View {
         //}
     }
     struct DetailHeader: View {
+        var userData: UserData
         var body: some View {
             VStack {
                 HStack() {
-                    Text("San Francisco").font(.largeTitle).bold().foregroundColor(.white)
+                    Text(self.userData.selectedCity.name).font(.largeTitle).bold().foregroundColor(.white)
                     Spacer()
                     Image(systemName: "cloud.sun").offset(y: -5)
                     Text("17°C")
