@@ -1,5 +1,4 @@
-# swiftui-city-guide-protype
-##### City Guide prototype using the SwiftUI
+# City Guide prototype using the latest SwiftUI
 
 ### Original mock-up (Jaeseong Jeong) : https://share.protopie.io/37pmSM5LtYM
 
